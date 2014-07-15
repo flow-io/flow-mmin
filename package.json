@@ -1,0 +1,54 @@
+{
+  "name": "flow-mmin",
+  "version": "0.0.1",
+  "description": "Transform stream which returns the min value in a moving window in a stream of numeric data.",
+  "author": {
+    "name": "Athan Reines",
+    "email": "athan@nodeprime.com"
+  },
+  "contributors": [
+    {
+      "name": "Athan Reines",
+      "email": "athan@nodeprime.com"
+    }
+  ],
+  "scripts": {
+    "test": "mocha"
+  },
+  "main": "./lib",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/RebekahJ/flow-mmin.git"
+  },
+  "keywords": [
+    "stream",
+    "writable",
+    "readable",
+    "transform",
+    "through",
+    "flow",
+    "flow.io",
+    "min",
+    "reduce",
+    "statistics",
+    "stats"
+  ],
+  "bugs": {
+    "url": "https://github.com/RebekahJ/flow-mmin/issues"
+  },
+  "dependencies": {
+    "flow-reduce": "~0.0.0",
+    "through": "~2.3.4"
+  },
+  "devDependencies": {
+    "mocha": "1.x.x",
+    "chai": "1.x.x",
+    "stream-spec": "~0.3.5"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ]
+}
