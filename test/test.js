@@ -1,40 +1,39 @@
 
-// REQUIRED MODULES //
+// **MODULES** //
 
-var // Expectation library:
-chai = require('chai'),
-utils = require('./utils'), // test utilities
-mStream = require('./../lib'); // to be tested
+var chai = require('chai'),        // Expectation library
+    utils = require('./utils'),    // Test utilities
+    mStream = require('./../lib'); // Module to be tested
 
-// VARIABLES //
+// **VARIABLES** //
 
 var expect = chai.expect,
-assert = chai.assert;
+    assert = chai.assert;
 
-// TESTS //
+// **TESTS** //
 
 describe('mmin', function tests() {
     'use strict';
 
-// Test 1
+    // Test 1
     it('should export a factory function', function test() {
 	expect(mStream).to.be.a('function');
     });
 
-// Test 2
+    // Test 2
     it('should provide a method to get the window size', function test() {
 	var tStream = mStream();
 	expect(tStream.window()).to.be.a('number'); //why not mStream.window()
     });
 
-// Test 3
+    // Test 3
     it('should provide a method to set the window size', function test() {
 	var tStream = mStream();
 	tStream.window(42);
 	assert.strictEqual(tStream.window(),42);
     });
 
-// Test 4
+    // Test 4
     it('should not allow a non-numeric window size', function test() {
 	var tStream = mStream();
 
@@ -53,15 +52,16 @@ describe('mmin', function tests() {
 	} 
     }); //end non-numeric window
 
-// Test 5
+    // Test 5
     it('should find the min value of the data in the window', function test(done) {
 	var data, expected, tStream, WINDOW = 5;
 
 	// Simulate some data
-	// careful to test all dropVal/newVal vs min combos
+	// simulation contains all dropVal/newVal vs min combos
 	data = [2,8,2,13,41,7,9,7,12,24,7,10,4,4,3];
 	// Expected values of rolling min in window
 	expected = [2,2,2,7,7,7,7,7,4,4,3];
+
 	// Create a new min stream
 	tStream = mStream()
 	    .window(WINDOW)
@@ -73,7 +73,10 @@ describe('mmin', function tests() {
 
 	return;
 
-	// **Function** onRead: check for errors, comp streamed data to exp data
+	/**
+	 * FUNCTION: onRead(error, actual)
+	 * Read event handler. Checks for errors. Compares streamed and expected data.
+	 */
 	function onRead(error,actual) {
 	    expect(error).to.not.exist;
 
@@ -92,19 +95,19 @@ describe('mmin', function tests() {
 
 	    done();
 
-	} //end onRead
+	} //end FUNCTION onRead()
+    });
 
-    }); //end min test
-
-// Test 6
+    // Test 6
     it('should calc min of piped data in arb window size', function test(done) {
 
 	var data, expected, tStream, WINDOW = 3;
 
-	// Simulate some data
+	// Simulate some data, test all dropVal/newVal combinations
 	data = [2,8,2,13,41,7,9,7,12,24,7,10,4,4,3];
 	// Expected values of rolling min in window
 	expected = [2,2,2,7,7,7,7,7,7,7,4,4,3];
+
 	// Create a new min stream
 	tStream = mStream()
 	    .window(WINDOW)
@@ -116,7 +119,10 @@ describe('mmin', function tests() {
 
 	return;
 
-	// **Function** onRead: check for errors, comp streamed data to exp data
+	/**
+	 * FUNCTION: onRead(error, actual)
+	 * Read event handler. Check for errors. Compare streamed and expected data.
+	 */
 	function onRead(error,actual) {
 	    expect(error).to.not.exist;
 
@@ -136,8 +142,8 @@ describe('mmin', function tests() {
 	    assert.closeTo( actual[12], expected[12], 0.001);
 
 	    done();
-	} //end onRead
-    }); //end any window size test
+	} //end FUNCTION onRead()
+    }); 
 
       }); //end description of tests
 
