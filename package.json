@@ -1,12 +1,16 @@
 {
   "name": "flow-mmin",
-  "version": "0.0.1",
-  "description": "Transform stream which returns the min value in a moving window in a stream of numeric data.",
+  "version": "0.0.0",
+  "description": "Transform stream which finds the minimum value in a sliding-window in a numeric data stream.",
   "author": {
-    "name": "Athan Reines",
-    "email": "athan@nodeprime.com"
+    "name": "Rebekah Smith",
+    "email": "rebekahjs17@gmail.com"
   },
   "contributors": [
+    {
+      "name": "Rebekah Smith",
+      "email": "rebekahjs17@gmail.com"
+    },
     {
       "name": "Athan Reines",
       "email": "athan@nodeprime.com"
@@ -18,7 +22,7 @@
   "main": "./lib",
   "repository": {
     "type": "git",
-    "url": "git://github.com/RebekahJ/flow-mmin.git"
+    "url": "git://github.com/flow-io/flow-mmin.git"
   },
   "keywords": [
     "stream",
@@ -28,21 +32,24 @@
     "through",
     "flow",
     "flow.io",
+    "minimum",
     "min",
-    "reduce",
+    "moving min",
+    "sliding window",
     "statistics",
     "stats"
   ],
   "bugs": {
-    "url": "https://github.com/RebekahJ/flow-mmin/issues"
+    "url": "https://github.com/flow-io/flow-mmin/issues"
   },
   "dependencies": {
     "flow-reduce": "~0.0.0",
     "through": "~2.3.4"
   },
   "devDependencies": {
-    "mocha": "1.x.x",
     "chai": "1.x.x",
+    "event-stream": "^3.1.7",
+    "mocha": "1.x.x",
     "stream-spec": "~0.3.5"
   },
   "licenses": [
