@@ -1,7 +1,7 @@
 {
   "name": "flow-mmin",
   "version": "0.0.0",
-  "description": "Transform stream which finds the minimum value in a sliding-window in a numeric data stream.",
+  "description": "Transform stream factory to find sliding-window minimum values (moving min) over a numeric data stream.",
   "author": {
     "name": "Rebekah Smith",
     "email": "rebekahjs17@gmail.com"
@@ -43,14 +43,12 @@
     "url": "https://github.com/flow-io/flow-mmin/issues"
   },
   "dependencies": {
-    "flow-reduce": "~0.0.0",
-    "through": "~2.3.4"
+    "through2": "^0.5.1"
   },
   "devDependencies": {
     "chai": "1.x.x",
     "event-stream": "^3.1.7",
-    "mocha": "1.x.x",
-    "stream-spec": "~0.3.5"
+    "mocha": "1.x.x"
   },
   "licenses": [
     {

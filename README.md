@@ -1,22 +1,19 @@
 flow-mmin
 =========
 
-Transform stream which finds the minimum value in a sliding-window (moving min) in a numeric data stream.
+Transform stream factory to find sliding-window minimum values (moving min) over a numeric data stream.
 
 ## Installation
 
-+ Clone flow-mmin.
-+ In top level of new flow-mmin directory, use
-
 ```bash
-$ npm install
+$ npm install flow-mmin
 ```
 
 ## Examples
 
 ``` javascript
 var eventStream = require('event-stream'),
-      minStream = require('flow-mmin');
+	minStream = require('flow-mmin');
 
 // Create an array containing random numbers:
 var randoms = new Array( 50 );
